@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://pumk40i2cdqc"]
+
+[ext_resource type="Script" uid="uid://djxau2ru8nehd" path="res://Scripts/audio_slider.gd" id="1_pmn3i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8y5x"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Audio Slider" type="Control" unique_id=1545882467]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pmn3i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1709820534]
+layout_mode = 0
+offset_right = 970.0
+offset_bottom = 40.0
+theme_override_constants/separation = 42
+
+[node name="Audio Name" type="Label" parent="HBoxContainer" unique_id=1400698094]
+layout_mode = 2
+text = "Placeholder"
+label_settings = SubResource("LabelSettings_o8y5x")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=566927561]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer" unique_id=1444764236]
+custom_minimum_size = Vector2(200, 32)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer" unique_id=920052074]
+layout_mode = 2
+
+[node name="Slider Number" type="Label" parent="HBoxContainer" unique_id=1923251586]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_o8y5x")

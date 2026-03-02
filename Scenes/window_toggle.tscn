@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cffm04xegyvhc"]
+
+[ext_resource type="Script" uid="uid://hatnqtu0lee5" path="res://Scripts/window_toggle.gd" id="1_jeruk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yh2dc"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Window Toggle" type="Control" unique_id=1656137369]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jeruk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1935468940]
+layout_mode = 0
+offset_right = 970.0
+offset_bottom = 45.0
+theme_override_constants/separation = 42
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=695915301]
+layout_mode = 2
+text = "Window Mode"
+label_settings = SubResource("LabelSettings_yh2dc")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=707673534]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer" unique_id=1619927731]
+layout_mode = 2
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Fullsreen"
+popup/item_1/id = 1
+popup/item_2/text = "Exclusive Fullscreen"
+popup/item_2/id = 2
+
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

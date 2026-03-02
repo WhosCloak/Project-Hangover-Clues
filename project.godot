@@ -11,14 +11,19 @@ config_version=5
 [application]
 
 config/name="Project-Hangover_clues"
-run/main_scene="uid://d4b63gm35isbs"
+run/main_scene="uid://dviix38tuxcae"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://b1y6ejcdn2t45"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=2
 
 [input]
 

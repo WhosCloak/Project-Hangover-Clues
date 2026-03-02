@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dviix38tuxcae"]
+
+[ext_resource type="Script" uid="uid://dsfdys7mdq716" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="PackedScene" uid="uid://cconjgxa7vimf" path="res://Scenes/options_menu.tscn" id="2_48xlc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_erv1k"]
+font_size = 163
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main Menu" type="Control" unique_id=203228233]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1080281068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2115727962]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=624386299]
+layout_mode = 2
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=597264036]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=768963798]
+layout_mode = 2
+text = "Hangover Clues v1.0"
+label_settings = SubResource("LabelSettings_erv1k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1472193498]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1454663704]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 64
+
+[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=992568049]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=715491251]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_vertical = 0
+focus_neighbor_bottom = NodePath("../Options")
+theme_override_font_sizes/font_size = 34
+text = "Start Multiplayer"
+
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=432433701]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Exit")
+theme_override_font_sizes/font_size = 34
+text = "Options"
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2114470268]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
+theme_override_font_sizes/font_size = 34
+text = "Exit Game"
+
+[node name="Options Menu" parent="." unique_id=81687013 instance=ExtResource("2_48xlc")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

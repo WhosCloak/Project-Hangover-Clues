@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bcg622s2xcyul"]
+
+[ext_resource type="PackedScene" uid="uid://pumk40i2cdqc" path="res://Scenes/audio_slider.tscn" id="1_hr3y7"]
+[ext_resource type="PackedScene" uid="uid://cffm04xegyvhc" path="res://Scenes/window_toggle.tscn" id="2_i7kpr"]
+[ext_resource type="PackedScene" uid="uid://cufgvpl4jx7y7" path="res://Scenes/resolution_toggle.tscn" id="3_0m3hm"]
+
+[node name="Settings Tab" type="Control" unique_id=1737546845]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1388875527]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Audio" type="TabBar" parent="TabContainer" unique_id=2085578239]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Audio" unique_id=1575850670]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Audio/MarginContainer" unique_id=536872481]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/MarginContainer/ScrollContainer" unique_id=1470422942]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Audio Slider" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1545882467 instance=ExtResource("1_hr3y7")]
+layout_mode = 2
+
+[node name="Audio Slider2" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" unique_id=750473707 instance=ExtResource("1_hr3y7")]
+layout_mode = 2
+audio_bus = "Music"
+
+[node name="Audio Slider3" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1758483309 instance=ExtResource("1_hr3y7")]
+layout_mode = 2
+audio_bus = "SFX"
+
+[node name="Display" type="TabBar" parent="TabContainer" unique_id=725202730]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Display" unique_id=1396621344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Display/MarginContainer" unique_id=391461379]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Display/MarginContainer/ScrollContainer" unique_id=948488230]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Window Toggle" parent="TabContainer/Display/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1656137369 instance=ExtResource("2_i7kpr")]
+layout_mode = 2
+
+[node name="Resolution Toggle" parent="TabContainer/Display/MarginContainer/ScrollContainer/VBoxContainer" unique_id=370199986 instance=ExtResource("3_0m3hm")]
+layout_mode = 2
+
+[node name="Controls" type="TabBar" parent="TabContainer" unique_id=1892946052]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls" unique_id=1590122073]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer" unique_id=823431365]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer" unique_id=1944240687]
+layout_mode = 2

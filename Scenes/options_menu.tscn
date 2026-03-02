@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cconjgxa7vimf"]
+
+[ext_resource type="PackedScene" uid="uid://bcg622s2xcyul" path="res://Scenes/settings_tab.tscn" id="1_plplt"]
+[ext_resource type="Script" uid="uid://6iwd0aklvabc" path="res://Scripts/options_menu.gd" id="1_uj0ok"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ptvp"]
+font_size = 52
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Options Menu" type="Control" unique_id=81687013]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uj0ok")
+
+[node name="ColorRect Change to Texture" type="ColorRect" parent="." unique_id=211871262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.4627451, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1562861319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=766865187]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1099135582]
+layout_mode = 2
+text = "Options"
+label_settings = SubResource("LabelSettings_7ptvp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings Tab" parent="MarginContainer/VBoxContainer" unique_id=1737546845 instance=ExtResource("1_plplt")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Return" type="Button" parent="." unique_id=1582437626]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_top = -58.60498
+offset_right = 31.0
+offset_bottom = -27.60498
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return"
+
+[connection signal="button_down" from="Return" to="." method="_on_return_button_down"]
